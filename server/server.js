@@ -10,18 +10,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://landrian61:FL4glLmvlr1k3dpP@cluster0.uuysxqq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+//"mongodb+srv://landrian61:FL4glLmvlr1k3dpP@cluster0.uuysxqq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongoose.connect(process.env.MONGODB_CONNECT_URI
+//  , {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }
+);
 
 // Define Todo schema and model
 const todoSchema = new mongoose.Schema({
