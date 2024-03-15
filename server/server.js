@@ -17,7 +17,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/todo-app', {
+mongoose.connect("mongodb+srv://landrian61:FL4glLmvlr1k3dpP@cluster0.uuysxqq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
